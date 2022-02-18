@@ -10,7 +10,6 @@ import {
     ModalOverlay,
     useDisclosure
   } from "@chakra-ui/react";
-  import { PeriodDimension } from "@dhis2/analytics";
   import { useStore } from "effector-react";
   import { useState } from "react";
   import { changePeriod } from "../stores/Events";
@@ -41,10 +40,10 @@ import {
             <ModalHeader>Period</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <PeriodDimension
+              {/* <PeriodDimension
                 selectedPeriods={selectedPeriods}
                 onSelect={onSelect}
-              />
+              /> */}
             </ModalBody>
             <ModalFooter>
               <Button colorScheme="red" mr={3} onClick={onClose}>

@@ -11,8 +11,7 @@ import {
     return (
       <ChakraProvider theme={theme}>
         <VStack
-          w="100vw"
-          h="calc(100vh - 48px)"
+          w="100vw" 
           alignItems="center"
           justifyContent="center"
         >

@@ -1,7 +1,8 @@
+import {Moment} from 'moment'
 export interface Store {
     currentUser: string;
     userUnits: any[];
-    period: any[];
+    period: [Moment,Moment];
     name?: string;
     zoom: number;
     locations?: { id: string; name: string }[];
@@ -9,6 +10,7 @@ export interface Store {
     currentLevel: number;
     sublevel: number;
     sublevels: any[];
+    weeks: any[];
   }
   
   export interface DataValue {

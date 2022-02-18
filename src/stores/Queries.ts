@@ -47,7 +47,7 @@ export function useLoader() {
   });
 }
 
-export const useMaps = (level: number, parent: string) => {
+export const useMaps = (level: number, parent: string, ) => {
     const engine = useDataEngine();
     const query = {
       geojson: {
@@ -108,7 +108,9 @@ export const useMaps = (level: number, parent: string) => {
     });
   }
   
-  export function useSqlView(indicator: Indicator) {
+  export function useSqlView(indicator: Indicator, startDate = "",
+  endDate = "") {
+    
     const engine = useDataEngine();
     const numeratorKeys = Object.entries(indicator.numerator.parameters).flatMap(
       (val) => {
@@ -158,6 +160,7 @@ export const useMaps = (level: number, parent: string) => {
         indicator.denominator.sqlView,
         ...numeratorKeys,
         ...denominatorKeys,
+        startDate, endDate
       ],
       async () => {
         const {
@@ -187,9 +190,7 @@ export const useMaps = (level: number, parent: string) => {
           denominators,
         };
       },
-      {
-        refetchInterval: 1000 * 5,
-      }
+      
     );
   }
 

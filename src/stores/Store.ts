@@ -1,3 +1,4 @@
+import moment from "moment";
 import { Store } from "../interfaces";
 import { domain } from "./Domain";
 import {
@@ -10,21 +11,23 @@ import {
   changePeriod,
   setSublevel,
   setSublevels,
+  setWeeks,
   setUserUnits,
   setZoom,
+
 } from "./Events";
 
 export const $store = domain
   .createStore<Store>({
     currentUser: "",
     selectedUnits: "",
-    period: [{ id: "LAST_3_MONTHS", name: "Last 3 months" }, { id: "QUARTERS", name: "Last Quarter" }],
     userUnits: [],
     currentLevel: 3,
     zoom: 6.0,
     sublevel: 3,
-
+    weeks: [],
     sublevels: [],
+    period: [moment().subtract(1, 'days'), moment()]
   })
   .on(changeCurrentUser, (state, user) => {
     return { ...state, currentUser: user };
@@ -47,7 +50,7 @@ export const $store = domain
   .on(setZoom, (state, zoom) => {
     return { ...state, zoom };
   })
-  .on(changePeriod, (state, period: any[]) => {
+  .on(changePeriod, (state, period) => {
     return { ...state, period };
   })
   .on(setSublevel, (state, sublevel) => {
@@ -58,4 +61,7 @@ export const $store = domain
   })
   .on(setSublevels, (state, sublevels) => {
     return { ...state, sublevels };
+  })
+  .on(setWeeks, (state, weeks) => {
+    return { ...state, weeks };
   });

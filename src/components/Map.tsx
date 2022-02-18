@@ -32,7 +32,7 @@ const Map: FC<{
               textTransform="uppercase"
               fontWeight="bold"
               fontSize="0.8vw"
-              color="gray.500"
+              color="blue.600"
               isTruncated
             >
               {title}
@@ -50,6 +50,7 @@ const Map: FC<{
                     ({ id }) => data.numerators[id] || 0
                   ),
                   featureidkey: "properties.name",
+                  color:"blue",
                   geojson: metadata.geojson,
                 } as any,
               ]}

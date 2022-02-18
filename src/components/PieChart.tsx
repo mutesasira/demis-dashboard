@@ -3,7 +3,7 @@ import { FC } from "react";
 import Plot from "react-plotly.js";
 import { Indicator } from "../interfaces";
 import { useSqlView } from "../stores/Queries";
-const Donut: FC<{
+const PieChart: FC<{
   indicator: Indicator;
   processor: (data: any, ...args: any[]) => any;
   args: any[];
@@ -32,6 +32,7 @@ const Donut: FC<{
             showlegend: false,
             autosize: true,
             margin: {
+              
               pad: 0,
               r: 0,
               t: 0,
@@ -49,8 +50,4 @@ const Donut: FC<{
   );
 };
 
-export default Donut;
-
-
-
-
+export default PieChart;

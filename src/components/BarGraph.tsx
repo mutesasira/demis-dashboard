@@ -11,16 +11,17 @@ import {
     indicator: Indicator;
     bg: string;
     yColor: string;
+    args: any[];
     title: string;
     processor: (data: any, ...args: any[]) => any;
-  }> = ({ indicator, processor,  bg, yColor, title }) => {
+  }> = ({ indicator, processor, args,  bg, yColor }) => {
     const { isLoading, isError, isSuccess, error, data } = useSqlView(indicator);
     return (
       <Stack h="100%" w="100%">
         {isLoading && <Spinner />}
         {isSuccess && (
           <Plot
-            data={processor(data)}
+          data={processor(data, ...args)}
             layout={{
               barmode: "group",
               plot_bgcolor: bg,
@@ -41,7 +42,7 @@ import {
                 r: 5,
                 t: 0,
                 l: 40,
-                b: 20,
+                b: 60,
               },
               yaxis: {
                 showgrid: true,
