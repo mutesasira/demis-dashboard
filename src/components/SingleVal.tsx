@@ -25,14 +25,14 @@ const ST: FC<{
           <Text
             textTransform="uppercase"
             fontWeight="medium"
-            fontSize="0.9vw"
+            fontSize="0.7vw"
             isTruncated
           >
             {title}
           </Text>
         </Tooltip>
   
-        <Text fontSize={"1.5vw"} color="red" fontWeight="bold">
+        <Text fontSize={"1.8vw"} color="red" fontWeight="bold">
           {formatter.format(Number(data))}
           {postfix}
         </Text>

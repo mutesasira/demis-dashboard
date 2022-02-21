@@ -156,7 +156,7 @@ export function processTestedPositive(
   };
   return [referred, reportedPositive];
 }
-export const processVaccinationCoverage = (data: any) => {
+export const processReportingPercentage = (data: any) => {
   if (
     Number(data.numerators) !== NaN &&
     Number(data.denominators) !== NaN &&
@@ -186,5 +186,16 @@ export function processBarData(data: any) {
   
   return [reportedSchools];
 }
+
+export const processSingleR = (data: any) => {
+  if (
+    Number(data.numerators) !== NaN &&
+    Number(data.denominators) !== NaN &&
+    Number(data.denominators) !== 0
+  ) {
+    return Number(data.numerators) / Number(data.denominators);
+  }
+  return 0;
+};
 
 

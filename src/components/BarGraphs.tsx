@@ -14,7 +14,7 @@ const BarGraphs: FC<{ yColor: string; bg: string }> = ({ yColor, bg }) => {
 
   const [tabIndex, setTabIndex] = useState<number>(0);
 
-  const increment = () => setTabIndex((s: number) => (s + 1) % 5);
+  const increment = () => setTabIndex((s: number) => (s + 1) % 3);
   useInterval(increment, 1000 * 60 * 2);
 
   return (

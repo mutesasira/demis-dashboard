@@ -175,12 +175,12 @@ export const mainDashboard: { [key: string]: func } = {
       },
     };
   },
-  total_schools_registered: (parent, startdate, enddate) => {
+  total_schools_registered: (parent) => {
     return {
       numerator: {
         sqlView: "uw6OMvjHWtB",
         parameters: {
-          parent, startdate, enddate
+          parent
         },
       },
       denominator: {
@@ -419,15 +419,16 @@ export const mainDashboard: { [key: string]: func } = {
       },
     };
   },
-  coverage: (parent , startdate, enddate) => {
+
+  report_percentage: (parent , startdate, enddate) => {
     return {
       numerator: {
-        sqlView: "Ks3uLn0bb17",
-        parameters: { parent, dx: "rrvYimAHvV7", startdate, enddate},
+        sqlView: "gclV1q6K1yJ",
+        parameters: { parent, startdate, enddate},
       },
       denominator: {
-        sqlView: "SebGxVV33Vn",
-        parameters: { parent, dx: "l2CJ4fYySx9", startdate, enddate},
+        sqlView: "nUudONuOHVi",
+        parameters: { parent, startdate, enddate},
       },
     };
   },
@@ -562,12 +563,12 @@ export const mainDashboard: { [key: string]: func } = {
     }
   },
 
-  registered_reporters : (parent, startdate, enddate) => {
+  registered_reporters : (parent) => {
     return {
       numerator: {
         sqlView: "nUudONuOHVi",
         parameters: {
-          parent, startdate, enddate
+          parent
         },
       },
       denominator: {
@@ -577,12 +578,12 @@ export const mainDashboard: { [key: string]: func } = {
     }
   },
 
-  users_at_school_level : (parent, startdate, enddate) => {
+  users_at_school_level : (parent) => {
     return {
       numerator: {
         sqlView: "nQcVI19bUv5",
         parameters: {
-          parent, startdate, enddate
+          parent
         },
       },
       denominator: {
@@ -597,6 +598,22 @@ export const mainDashboard: { [key: string]: func } = {
       numerator: {
         sqlView: "YXED52Olvko",
         parameters: { parent, startdate, enddate},
+      },
+      denominator: {
+        sqlView: "fepCqYMstWu",
+        parameters: {},
+      },
+    }
+  },
+
+  cumulative_positive : (parent, startdate, enddate) => {
+    return {
+      numerator: {
+        sqlView: "ksZ8C94batE",
+        parameters: {
+          dx: "mGk4R6i1tz9",
+          parent, startdate, enddate
+        },
       },
       denominator: {
         sqlView: "fepCqYMstWu",

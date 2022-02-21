@@ -23,7 +23,9 @@ const VisualizeMap: FC<{ indicator: Indicator; title: string }> = ({
           indicator={indicator}
           center={data.mapCenter}
           title={title}
+          
         />
+        
       )}
       {isError && <Box>{error.message}</Box>}
     </>
